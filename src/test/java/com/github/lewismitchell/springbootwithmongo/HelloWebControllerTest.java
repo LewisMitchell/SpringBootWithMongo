@@ -22,6 +22,6 @@ public class HelloWebControllerTest {
     public void getWeb() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/web").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(view().name("Hello"));
+                .andExpect(view().name("HelloEntry"));
     }
 }
