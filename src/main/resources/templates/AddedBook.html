@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Successfully added a book - Books</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:include="~{BootstrapCSSJS.html}"></th:block>
+</head>
+<body>
+    <main class="container">
+        <h1>Books</h1>
+
+        <h2>Successfully added a book</h2>
+
+        <p>You have added the following book:</p>
+        <ul>
+            <li>
+                <p th:text="|Name: ${book.name}|"></p>
+                <p th:text="|Author: ${book.author}|"></p>
+            </li>
+        </ul>
+
+        <a href="/books">Back to all books</a>
+    </main>
+</body>
+</html>

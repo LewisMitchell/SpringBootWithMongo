@@ -8,20 +8,21 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloWebControllerTest {
+public class ViewBooksControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void getWeb() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/web").accept(MediaType.APPLICATION_JSON))
+    public void onPageLoadTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/books"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("HelloEntry"));
+                .andExpect(view().name("Books"));
     }
+
 }

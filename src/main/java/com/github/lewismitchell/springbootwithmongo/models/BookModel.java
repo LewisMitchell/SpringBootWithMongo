@@ -3,27 +3,25 @@ package com.github.lewismitchell.springbootwithmongo.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("sample-data")
-public class SampleModel {
+@Document("books")
+public class BookModel {
 
     @Id
     private String id;
 
     private String name;
-    private String description;
+    private String author;
 
-    SampleModel() {}
+    BookModel() {}
 
-    public SampleModel(String name, String description) {
+    public BookModel(String name, String author) {
         this.name = name;
-        this.description = description;
+        this.author = author;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getAuthor() { return author; }
 }

@@ -3,7 +3,7 @@ package com.github.lewismitchell.springbootwithmongo.forms;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class SampleModelForm {
+public class BookModelForm {
 
     @NotNull
     @Size(min = 1)
@@ -11,7 +11,7 @@ public class SampleModelForm {
 
     @NotNull
     @Size(min = 1)
-    private String description;
+    private String author;
 
     public String getName() {
         return name;
@@ -21,11 +21,11 @@ public class SampleModelForm {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAuthor(String description) {
+        this.author = description;
     }
 }

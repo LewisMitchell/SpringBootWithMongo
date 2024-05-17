@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Books</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:include="~{BootstrapCSSJS.html}"></th:block>
+</head>
+<body>
+    <main class="container">
+        <h1>Books</h1>
+        <div th:if="${books.size > 0}">
+            <p th:text="|We found ${books.size} books:|"/>
+            <ul>
+                <li th:each="book: ${books}">
+                    <p th:text="|Name: ${book.name}|"></p>
+                    <p th:text="|Author: ${book.author}|"></p>
+                </li>
+            </ul>
+        </div>
+        <div th:unless="${books.size > 0}">
+            <p>We have found no books</p>
+        </div>
+
+        <a href="books/add">Add a book</a>
+    </main>
+</body>
+</html>
